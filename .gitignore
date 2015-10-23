@@ -1,0 +1,21 @@
+*.class
+*.iml
+*.releaseBackup
+*.git.properties
+
+git.properties
+
+# maven-build directory. hopefully no one uses "target" in a package name
+target/
+target-ide/
+
+# eclipse related files
+.classpath
+
+# maven-build directory. hopefully no one uses "bin" in a package name
+bin/
+
+# The IBM Technical support log directory
+IBM_TECHNICAL_SUPPORT
+
+.project

@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.foconis.examples</groupId>
+	<artifactId>domino-jna-example</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>domino-jna-example</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<sourceEncoding>UTF-8</sourceEncoding>
+		<outputEncoding>UTF-8</outputEncoding>
+		<!-- We must use java 1.6 compiler level -->
+		<java.version>1.6</java.version>
+		<java.target>${java.version}</java.target>
+		<compiler>${java.version}</compiler>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.ibm.domino</groupId>
+			<artifactId>napi</artifactId>
+			<version>9.0.1</version>			
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ibm.notes</groupId>
+			<artifactId>java.api</artifactId>
+			<version>9.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- zum direkten Zugriff auf die C-API :-D -->
+		<dependency>
+			<groupId>net.java.dev.jna</groupId>
+			<artifactId>jna-platform</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>${compiler}</source>
+					<target>${compiler}</target>
+					<optimize>true</optimize>
+					<showWarnings>true</showWarnings>
+					<showDeprecation>true</showDeprecation>
+					<failOnError>true</failOnError>
+
+				</configuration>
+
+			</plugin>
+		</plugins>
+	</build>
+</project>
